@@ -4,18 +4,32 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        temp = [] 
+        # temp = [] 
 
-        for num  in nums:
+        # for num  in nums:
+        #     if num != 0:
+        #         temp.append(num) 
+
+        # zero_count = len(nums) - len(temp) 
+        # for i in range(len(temp)):
+        #     nums[i] = temp[i]
+        # for i in range(len(temp),len(nums)):
+        #     nums[i] = 0  
+        
+        temp = []
+        for num in nums:
             if num != 0:
-                temp.append(num) 
-
-        zero_count = len(nums) - len(temp) 
-        for i in range(len(temp)):
+                temp.append(num)
+        zero_count = len(nums) - len(temp)
+        temp.extend([0]*zero_count)
+        for i in range(len(nums)):
             nums[i] = temp[i]
-        for i in range(len(temp),len(nums)):
-            nums[i] = 0                
+        return  nums    
+      
 
+
+
+          
 
 
 
