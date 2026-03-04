@@ -4,28 +4,31 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        # temp = [] 
-
-        # for num  in nums:
-        #     if num != 0:
-        #         temp.append(num) 
-
-        # zero_count = len(nums) - len(temp) 
-        # for i in range(len(temp)):
-        #     nums[i] = temp[i]
-        # for i in range(len(temp),len(nums)):
-        #     nums[i] = 0  
-        
+        #1.create a temp list  
         temp = []
+
+        # 2. temp.append remaining n!= 0 element 
         for num in nums:
-            if num != 0:
-                temp.append(num)
-        zero_count = len(nums) - len(temp)
-        temp.extend([0]*zero_count)
+            if  num != 0:
+                temp.append(num) 
+        # 3. count zeroes 
+        count_zeroes = len(nums) - len(temp)
+        # 4. add zeroes t end of an array  
+        temp.extend([0]*count_zeroes)
+        # 5. copy back to original array  
         for i in range(len(nums)):
             nums[i] = temp[i]
-        return  nums    
-      
+                
+            
+         
+        
+        
+         
+
+
+                     
+
+        
 
 
 
