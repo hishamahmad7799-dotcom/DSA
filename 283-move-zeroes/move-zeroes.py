@@ -4,16 +4,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        temp = []
-
-        for num in nums:
-            if num != 0:
-                temp.append(num)
-        count_zero = len(nums) - len(temp)
-        temp.extend([0]*count_zero)           
+        j = 0  # scans the array  
         for i in range(len(nums)):
-            nums[i] = temp[i]
-        return nums            
+            if nums[i] != 0:
+                nums[i],nums[j] = nums[j] ,nums[i]
+                j += 1 
+        return  nums        
 
              
 
