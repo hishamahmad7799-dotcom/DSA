@@ -13,30 +13,17 @@ class Solution(object):
         #         nums[i] = nums[j] 
         # return i + 1
 
-        # if not nums:
-        #     return 0 
-        # temp = []
-        # temp.append(nums[0])
-        # for i in range(1,len(nums)):
-        #     if nums[i] != nums[i-1]:
-        #         temp.append(nums[i])
-        # for i in range(len(temp)):
-        #     nums[i] = temp[i]
-        # return len(temp) 
-
+        # brute force 
         if not nums:
             return 0
-
         temp = []
         temp.append(nums[0])
-
         for i in range(1,len(nums)):
             if nums[i] != nums[i-1]:
                 temp.append(nums[i])
         for i in range(len(temp)):
             nums[i] = temp[i]
-        return len(temp)            
-
+        return len(temp)                 
 
 
 
