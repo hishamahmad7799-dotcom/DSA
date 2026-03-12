@@ -4,17 +4,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        # create a temp list
-        temp = []
-        for num in nums:
-            if num != 0:
-                temp.append(num)
-        # count zero  
-        count_zero = len(nums) - len(temp)
-        temp.extend([0]*count_zero)
-        for i in range(len(nums)):
-            nums[i] = temp[i]
-        return nums            
+        i = 0
+        for j in range(len(nums)):
+            if nums[j] != 0:
+                nums[i],nums[j] = nums[j] ,nums[i]
+                i += 1 
+        return  nums         
+                
 
        
 
