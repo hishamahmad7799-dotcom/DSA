@@ -4,17 +4,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        # brute force approach  
-        # get the size of array  
+        # kadannes algo  
         maxSum = nums[0] 
-        curSum = 0 
+        currSum  = 0 
         for num in nums:
-            curSum  += num 
-            if curSum > maxSum:
-                maxSum = curSum 
-            if curSum < 0:
-                curSum = 0    
-        return maxSum        
+            currSum += num
+            if currSum > maxSum:
+                maxSum = currSum
+            # the main logic why we are using  this algo 
+            if currSum < 0:
+                currSum = 0 
+        return  maxSum             
+
         
 
 
