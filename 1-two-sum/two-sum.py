@@ -5,14 +5,15 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        # optimal approach 
-        hashmap = {}
+        
+        hashmap  = {}
         for i in range(len(nums)):
             compliment = target - nums[i]
             if compliment in hashmap:
-                return  [hashmap[compliment],i]
-            hashmap[nums[i]] = i    
-                    
+                return [hashmap[compliment],i]
+            hashmap [nums[i]] = i              
+
+
 
 
         
