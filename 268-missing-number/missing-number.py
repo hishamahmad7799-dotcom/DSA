@@ -5,11 +5,19 @@ class Solution(object):
         :rtype: int
         """
         # cyclic sort
+        i = 0 
         n = len(nums)
-        for i in range(n + 1):
-            if i not in nums:
-                return i          
-       
+        while i < n:
+            corr = nums[i]
+            if nums[i] < n  and nums[i] != nums[corr]:
+                nums[i],nums[corr] = nums[corr],nums[i]
+            else:
+                i += 1
+
+        for i in range(n):
+            if nums[i] != i:
+                return i   
+        return n               
 
 
         
