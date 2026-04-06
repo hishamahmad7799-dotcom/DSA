@@ -4,15 +4,20 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        maxi = 0 
-        for i in range(len(s)):
-            seen = set()
-            for j in range(i,len(s)):
-                if s[j] in seen:
-                    break 
-                seen.add(s[j])    
-                maxi = max(maxi, j-i+1)
-        return maxi            
+        seen = set()
+        left = 0 
+        maxi = 0
+        for right in range(len(s)):
+            while s[right] in seen:
+                seen.remove(s[left])
+                left += 1
+            seen.add(s[right])
+            maxi = max(maxi,right - left + 1)
+        return maxi         
+
+
+
+                   
         
         
 
