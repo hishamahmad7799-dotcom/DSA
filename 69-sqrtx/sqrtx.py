@@ -4,7 +4,9 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        i = 0 
+        if x < 2:
+            return x
+        i = 2     
         while i*i <=x:
             i += 1
         return i - 1          
