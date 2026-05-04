@@ -6,8 +6,16 @@ class Solution(object):
         :rtype: bool
         """
         for row in matrix:
-            for num in row:
-                if num == target:
+            left,right = 0 ,len(row)-1
+
+            while left <= right:
+                mid = (left + right)//2 
+
+                if row[mid] == target:
                     return True 
-        return False             
-        
+                elif row[mid] < target:
+                    left = mid + 1
+                else:
+                    right = mid - 1
+        return False                     
+
