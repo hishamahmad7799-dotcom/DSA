@@ -4,9 +4,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        n = len(nums)
-        for i in range(n):
-            if ( i==0 or nums[i] != nums[i-1]) and (i == n-1 or nums[i] != nums[i+1]):
-                 return  nums[i]  
-                 
+        left,right = 0,len(nums)-1
 
+        while left < right:
+            mid = (left + right)//2
+
+            if mid % 2 == 1:
+                mid -= 1
+            if nums[mid] == nums[mid+1]:
+                left = mid + 2
+            else:
+                right = mid 
+        return nums[left]                
+        
