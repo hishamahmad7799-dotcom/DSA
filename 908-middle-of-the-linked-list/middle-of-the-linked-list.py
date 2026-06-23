@@ -9,13 +9,11 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        count = 0 
-        curr = head 
-        while curr:
-            count += 1
-            curr = curr.next
-        middle = count // 2
-        curr = head 
-        for _ in range(middle):
-            curr= curr.next 
-        return curr     
+        # slow pointer and fast pointer 
+        slow = head 
+        fast = head 
+
+        while fast and fast.next:
+            slow = slow.next 
+            fast = fast.next.next 
+        return slow           
