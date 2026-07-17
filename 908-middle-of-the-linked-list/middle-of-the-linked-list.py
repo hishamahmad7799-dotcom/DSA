@@ -9,11 +9,20 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        # slow pointer and fast pointer 
-        slow = head 
-        fast = head 
+        cnt = 0 
+        current = head 
+        # cnt the no. of nodes 
+        while current:
+            cnt += 1
+            current = current.next
+        # middle of the position  
+        middle = cnt //2 
+        current = head 
+        # move to the middle 
+        for i in range(middle):
+            current = current.next 
+        return current
+                
 
-        while fast and fast.next:
-            slow = slow.next 
-            fast = fast.next.next 
-        return slow           
+
+        
