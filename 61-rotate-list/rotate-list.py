@@ -10,28 +10,27 @@ class Solution(object):
         :type k: int
         :rtype: Optional[ListNode]
         """
-        if not head or not head.next:
+        if not head or not head.next or k == 0:
             return head 
-        # find lenght 
-        len = 0
-        curr = head 
 
-        while curr:
+        len = 1
+        tail = head 
+
+        while tail.next:
+            tail = tail.next
             len += 1
-            curr = curr.next
-        k %= len
+        k = k % len
+        if k == 0:
+            return head 
+        tail.next = head 
+        new_tail = head 
+        for _ in range(len-k-1):
+            new_tail = new_tail.next 
+        new_head = new_tail.next
+        new_tail.next = None 
+        return new_head                 
+        
 
-        for _ in range(k):
-            prev = None 
-            curr = head
-            while curr.next:
-                prev = curr
-                curr = curr.next  
-            prev.next = None 
-            curr.next = head
-
-            head = curr 
-        return head              
 
 
         
