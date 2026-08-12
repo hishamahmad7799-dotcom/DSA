@@ -11,18 +11,14 @@ class Solution(object):
         """
         cnt = 0 
         current = head 
-        # cnt the no. of nodes 
         while current:
-            cnt += 1
-            current = current.next
-        # middle of the position  
-        middle = cnt //2 
-        current = head 
-        # move to the middle 
+            cnt += 1 
+            current = current.next  
+        # middle part 
+        middle = cnt // 2
+        current = head
+
         for i in range(middle):
             current = current.next 
-        return current
-                
-
-
+        return current        
         
